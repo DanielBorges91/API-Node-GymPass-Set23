@@ -23,11 +23,3 @@ app.post('/users', async (request, replay) => {
 
   return replay.status(201).send()
 })
-
-app.get('/users', async (request, replay) => {
-  const users = await prisma.user.findMany()
-
-  // console.log(users)
-
-  return replay.send({ users })
-})
