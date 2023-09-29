@@ -45,11 +45,11 @@ describe('Authenticate Use Case', () => {
       password_hash: await hash('123456', 6),
     })
 
-    await expect(() => {
+    await expect(() =>
       sut.execute({
         email: 'johndoe@example.com',
         password: '1231233',
-      })
-    }).rejects.toBeInstanceOf(InvalidCredentialsError)
+      }),
+    ).rejects.toBeInstanceOf(InvalidCredentialsError)
   })
 })
